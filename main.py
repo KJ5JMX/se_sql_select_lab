@@ -51,7 +51,7 @@ df_short_title = pd.read_sql("""SELECT SUBSTR(jobTitle,1,2) AS short_title FROM 
 
 # STEP 8
 # Replace None with your code
-sum_total_price = pd.read_sql("""SELECT SUM(ROUND(priceEach * quantityOrdered)) AS sum_total_price FROM orderDetails""", conn)
+sum_total_price = pd.read_sql("""SELECT ROUND(priceEach * quantityOrdered)) AS sum_total_price FROM orderDetails""", conn).sum()
 
 # STEP 9
 # Replace None with your code
