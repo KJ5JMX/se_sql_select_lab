@@ -51,11 +51,11 @@ df_short_title = pd.read_sql("""SELECT SUBSTR(jobTitle,1,2) AS short_title FROM 
 
 # STEP 8
 # Replace None with your code
-sum_total_price = pd.read_sql("""SELECT SUM(priceEach * quantityOrdered) AS total_sales FROM orderDetails""", conn)
+sum_total_price = pd.read_sql("""SELECT SUM(priceEach * quantityOrdered) AS sum_total_price FROM orderDetails""", conn)
 
 # STEP 9
 # Replace None with your code
-df_day_month_year = pd.read_sql("""SELECT orderDate, STRFTIME('%d', orderDate) AS order_day, STRFTIME('%m', orderDate) AS order_month,STRFTIME('%Y', orderDate) AS order_year FROM orders""", conn) 
+df_day_month_year = pd.read_sql("""SELECT orderDate, STRFTIME('%d', orderDate) AS day, STRFTIME('%m', orderDate) AS month,STRFTIME('%Y', orderDate) AS year FROM orders""", conn) 
 
 
 
